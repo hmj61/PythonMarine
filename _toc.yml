@@ -4,6 +4,9 @@
 format: jb-book
 root: index
 chapters:
+  - file: book/Python programming introduction
+  - file: book/Python programming basics
+  - file: book/Python programming advanced
   - file: book/markdown
   - file: book/notebooks
   - file: book/bibliography
