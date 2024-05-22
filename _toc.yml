@@ -4,12 +4,12 @@
 format: jb-book
 root: index
 chapters:
-  - file: book/Python programming introduction
-  - file: book/Python programming basics
-  - file: book/Python programming advanced
-  - file: book/markdown
-  - file: book/notebooks
-  - file: book/bibliography
+  - file: book/Python-programming-introduction
+  - file: book/Python-programming-basics
+  - file: book/Python-programming-advanced
+  - file: book/Python-programming-introduction-assignment
+  - file: book/Python-programming-basics-assignment
+  - file: book/Python-programming-advanced-assignment
 
 # Or you organize the TOC by parts
 
