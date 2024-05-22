@@ -1,0 +1,2328 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python programming basics assignment &#8212; Python_Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/Python-programming-basics-assignment';</script>
+    <link rel="canonical" href="https://hmj61.github.io/PythonMarine/book/Python-programming-basics-assignment.html" />
+    <link rel="icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python programming advanced assignment" href="Python-programming-advanced-assignment.html" />
+    <link rel="prev" title="Python programming introduction assignment" href="Python-programming-introduction-assignment.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/Python.jpg" class="logo__image only-light" alt="Python_Book - Home"/>
+    <script>document.write(`<img src="../_static/Python.jpg" class="logo__image only-dark" alt="Python_Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Python-programming-introduction.html">Python programming introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-programming-basics.html">Python programming basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-programming-advanced.html">Python programming advanced</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-programming-introduction-assignment.html">Python programming introduction assignment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python programming basics assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Python-programming-advanced-assignment.html">Python programming advanced assignment</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/hmj61/PythonMarine/master?urlpath=tree/book/Python-programming-basics-assignment.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/hmj61/PythonMarine/blob/master/book/Python-programming-basics-assignment.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/hmj61/PythonMarine" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/hmj61/PythonMarine/edit/main/book/Python-programming-basics-assignment.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/hmj61/PythonMarine/issues/new?title=Issue%20on%20page%20%2Fbook/Python-programming-basics-assignment.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/Python-programming-basics-assignment.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python programming basics assignment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms">Implement a function to generate the Fibonacci sequence up to a specified number of terms.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order">Implement a function for insertion sort to sort a list in ascending order.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method">Implement a function to calculate the square root of a number using the Babylonian method.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">String</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-upper">str.upper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-title">str.title</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-replace">str.replace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-format-str-join">str.format str.join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-split">str.split</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-formulas">Creating formulas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-append-list-remove-mutable">list.append, list.remove, mutable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice">Slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-extend">list.extend</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-a-dictionary">Populating a dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicate-values-from-a-dictionary-using-del">Removing Duplicate Values from a Dictionary using ‘del’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-occurrences-of-elements-using-dict-get">Counting Occurrences of Elements using dict.get()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-by-category-using-dict-setdefault">Grouping Items by Category using dict.setdefault()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-merging-dictionaries-into-a-single-dictionary">Accessing and Merging Dictionaries into a Single Dictionary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <details><summary><b>LICENSE</b></summary>
+<p>MIT License</p>
+<p>Copyright (c) 2018 Oleksii Trekhleb</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+</details><section class="tex2jax_ignore mathjax_ignore" id="python-programming-basics-assignment">
+<h1>Python programming basics assignment<a class="headerlink" href="#python-programming-basics-assignment" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up the env</span>
+
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span> <span class="nn">ipytest</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="n">ipytest</span><span class="o">.</span><span class="n">autoconfig</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># set up the env</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pytest</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">ipytest</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">unittest</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ipytest</span><span class="o">.</span><span class="n">autoconfig</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipytest&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Link to this heading">#</a></h2>
+<section id="implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms">
+<h3>Implement a function to generate the Fibonacci sequence up to a specified number of terms.<a class="headerlink" href="#implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate the Fibonacci sequence up to the given number of terms.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        n (int): The number of Fibonacci terms to generate.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: A list containing the Fibonacci sequence.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">____</span><span class="p">:</span>
+        <span class="n">next_num</span> <span class="o">=</span> <span class="n">sequence</span><span class="p">[</span><span class="n">____</span><span class="p">]</span> <span class="o">+</span> <span class="n">sequence</span><span class="p">[</span><span class="n">____</span><span class="p">]</span>
+        <span class="n">____</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">____</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sequence</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+
+
+<span class="c1"># Testing fibonacci function</span>
+<span class="n">fib_sequence</span> <span class="o">=</span> <span class="n">fibonacci</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">fib_sequence</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span> <span class="s2">&quot;Fibonacci sequence test failed&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestFibonacci:
+    def test_fibonacci_sequence(self):
+        # Test case 1: Valid input
+        n = 10
+        expected_sequence = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+        # Act
+        result = fibonacci(n)
+
+        # Assert
+        assert result == expected_sequence
+
+    def test_fibonacci_sequence_zero_terms(self):
+        # Test case 2: Zero terms
+        n = 0
+        expected_sequence = []
+
+        # Act
+        result = fibonacci(n)
+
+        # Assert
+        assert result == expected_sequence
+
+    def test_fibonacci_sequence_single_term(self):
+        # Test case 3: Single term
+        n = 1
+        expected_sequence = [0]
+
+        # Act
+        result = fibonacci(n)
+
+        # Assert
+        assert result == expected_sequence
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>You can consider to start the Fibonacci sequence with [0, 1] and generate the next numbers using the last two elements.</p>
+</details>
+</div></section>
+<section id="implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order">
+<h3>Implement a function for insertion sort to sort a list in ascending order.<a class="headerlink" href="#implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform insertion sort on the given list.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        arr (list): The unsorted list to be sorted in-place.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None. The input list is sorted in-place.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">____</span> <span class="o">-</span> <span class="n">____</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">____</span><span class="p">:</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="n">____</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="n">____</span><span class="p">]</span> <span class="o">=</span> <span class="n">____</span>
+
+
+<span class="c1"># Testing insertion_sort function</span>
+<span class="n">unsorted_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">insertion_sort</span><span class="p">(</span><span class="n">unsorted_list</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">unsorted_list</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="s2">&quot;Insertion sort test failed&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestInsertionSort:
+    def test_insertion_sort(self):
+        # Test case 1: Unsorted list
+        arr = [5, 3, 8, 4, 2]
+        expected_sorted_list = [2, 3, 4, 5, 8]
+
+        # Act
+        insertion_sort(arr)
+
+        # Assert
+        assert arr == expected_sorted_list
+
+    def test_insertion_sort_empty_list(self):
+        # Test case 2: Empty list
+        arr = []
+        expected_sorted_list = []
+
+        # Act
+        insertion_sort(arr)
+
+        # Assert
+        assert arr == expected_sorted_list
+
+    def test_insertion_sort_single_element_list(self):
+        # Test case 3: Single element list
+        arr = [5]
+        expected_sorted_list = [5]
+
+        # Act
+        insertion_sort(arr)
+
+        # Assert
+        assert arr == expected_sorted_list
+
+    def test_insertion_sort_sorted_list(self):
+        # Test case 4: Already sorted list
+        arr = [2, 3, 4, 5, 8]
+        expected_sorted_list = [2, 3, 4, 5, 8]
+
+        # Act
+        insertion_sort(arr)
+
+        # Assert
+        assert arr == expected_sorted_list
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>You can consider to iterate and compare elements, shifting them to sort the list.</p>
+</details>
+</div></section>
+<section id="implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method">
+<h3>Implement a function to calculate the square root of a number using the Babylonian method.<a class="headerlink" href="#implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspired by SICP http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-10.html#%_sec_1.1.7</span>
+<span class="k">def</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implement a function to calculate the square root of a given number using the Babylonian method.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        x (float): The number for which the square root is to be calculated.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: The square root of the given number.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+
+    <span class="k">def</span> <span class="nf">is_good_enough</span><span class="p">(</span><span class="n">guess</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">((</span><span class="n">guess</span> <span class="o">*</span> <span class="n">guess</span><span class="p">)</span> <span class="o">-</span> <span class="n">____</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.001</span>
+
+    <span class="k">def</span> <span class="nf">improve</span><span class="p">(</span><span class="n">guess</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">average</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span> <span class="n">x</span> <span class="o">/</span> <span class="n">guess</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sqrt_iter</span><span class="p">(</span><span class="n">guess</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">is_good_enough</span><span class="p">(</span><span class="n">guess</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">____</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">____</span><span class="p">(</span><span class="n">improve</span><span class="p">(</span><span class="n">____</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">sqrt_iter</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+
+
+<span class="c1"># Testing sqrt function</span>
+<span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.001</span><span class="p">,</span> <span class="s2">&quot;Square root test failed&quot;</span>
+<span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="o">-</span> <span class="mf">4.0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.001</span><span class="p">,</span> <span class="s2">&quot;Square root test failed&quot;</span>
+<span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span> <span class="o">-</span> <span class="mf">5.0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.001</span><span class="p">,</span> <span class="s2">&quot;Square root test failed&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestSqrt:
+    def test_sqrt(self):
+        # Test case 1: Square root of 9
+        x = 9
+        expected_result = 3.0
+
+        # Act
+        result = sqrt(x)
+
+        # Assert
+        assert abs(result - expected_result) &lt; 0.001
+
+    def test_sqrt_perfect_square(self):
+        # Test case 2: Square root of a perfect square (16)
+        x = 16
+        expected_result = 4.0
+
+        # Act
+        result = sqrt(x)
+
+        # Assert
+        assert abs(result - expected_result) &lt; 0.001
+
+    def test_sqrt_non_perfect_square(self):
+        # Test case 3: Square root of a non-perfect square (25)
+        x = 25
+        expected_result = 5.0
+
+        # Act
+        result = sqrt(x)
+
+        # Assert
+        assert abs(result - expected_result) &lt; 0.001
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>You can consider using iterative approximation to calculate the square root.</p>
+</details>
+</div></section>
+</section>
+<section id="string">
+<h2>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h2>
+<section id="str-upper">
+<h3>str.upper<a class="headerlink" href="#str-upper" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capitalize_first_letter</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Capitalizes the first letter of each word in a string.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        string (str): The input string.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The input string with the first letter of each word capitalized.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">____</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="n">capitalized_word</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">____</span><span class="p">()</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">capitalized_word</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">____</span><span class="p">)</span>
+
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;hello, world! this is a sample sentence.&quot;</span>
+<span class="k">assert</span> <span class="n">capitalize_first_letter</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Hello, World! This Is A Sample Sentence.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestCapitalizeFirstLetterper(unittest.TestCase):
+
+    def test_string_upper_happy_case(self):
+        # assign
+        test_string = &#39;Python strings are COOL!&#39;
+
+        # act
+        actual_result = capitalize_first_letter(test_string)
+
+        # assert
+        expected_result = &#39;Python Strings Are COOL!&#39;
+        self.assertEqual(actual_result, expected_result)
+
+    def test_string_upper_none_string(self):
+        # act &amp; assert
+        with self.assertRaises(Exception):
+            capitalize_first_letter(None)
+
+    def test_string_upper_empty_string(self):
+        # assign
+        test_string = &#39;&#39;
+
+        # act
+        actual_result = capitalize_first_letter(test_string)
+
+        # assert
+        expected_result = &#39;&#39;
+        self.assertEqual(actual_result, expected_result)
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>You can consider splitting the string into words, capitalizing the first letter of each word, and joining the words back together.</p>
+</details>
+</div></section>
+<section id="str-title">
+<h3>str.title<a class="headerlink" href="#str-title" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">capitalize_words</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">exclude_words</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Capitalizes the first letter of each word in a sentence,</span>
+<span class="sd">    excluding certain words specified in the exclude_words list.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        sentence (str): The input sentence.</span>
+<span class="sd">        exclude_words (list, optional): List of words to be excluded from capitalization.</span>
+<span class="sd">            Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The sentence with capitalized words.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">exclude_words</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">exclude_words</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Split the sentence into words</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">____</span>
+
+    <span class="c1"># Capitalize the words, excluding the specified words</span>
+    <span class="n">capitalized_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="o">.</span><span class="n">____</span> <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude_words</span> <span class="k">else</span> <span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+
+    <span class="c1"># Join the words back into a sentence</span>
+    <span class="n">capitalized_sentence</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">capitalized_words</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">capitalized_sentence</span>
+
+
+<span class="c1"># Example and assertions</span>
+<span class="k">assert</span> <span class="n">capitalize_words</span><span class="p">(</span><span class="s2">&quot;this is a sentence&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;This Is A Sentence&quot;</span>
+<span class="k">assert</span> <span class="n">capitalize_words</span><span class="p">(</span><span class="s2">&quot;this is a sentence&quot;</span><span class="p">,</span> <span class="n">exclude_words</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;is&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="s2">&quot;This is A Sentence&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestCapitalizeWords(unittest.TestCase):
+
+    def test_capitalize_words_default(self):
+        # assign
+        sentence = &quot;this is a sentence&quot;
+
+        # act
+        actual_result = capitalize_words(sentence)
+
+        # assert
+        expected_result = &quot;This Is A Sentence&quot;
+        self.assertEqual(actual_result, expected_result)
+
+    def test_capitalize_words_exclude_words(self):
+        # assign
+        sentence = &quot;this is a sentence&quot;
+        exclude_words = [&quot;is&quot;]
+
+        # act
+        actual_result = capitalize_words(sentence, exclude_words)
+
+        # assert
+        expected_result = &quot;This is A Sentence&quot;
+        self.assertEqual(actual_result, expected_result)
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Split sentence into words, capitalize each word (excluding specified words), and join them.</p>
+</details>
+</div></section>
+<section id="str-replace">
+<h3>str.replace<a class="headerlink" href="#str-replace" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">censor_words</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">words</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Censors specified words in a sentence with asterisks.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        sentence (str): The input sentence.</span>
+<span class="sd">        words (list): The list of words to be censored.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The sentence with censored words.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Iterate over each word in the list of words</span>
+    <span class="k">for</span> <span class="n">____</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="n">censor</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">____</span><span class="p">)</span>  <span class="c1"># Create a censor string of asterisks with the same length as the word</span>
+        <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">____</span><span class="p">,</span> <span class="n">censor</span><span class="p">)</span>  <span class="c1"># Replace the word with the censor string in the sentence</span>
+
+    <span class="k">return</span> <span class="n">sentence</span>
+
+
+<span class="k">assert</span> <span class="n">censor_words</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="s2">&quot;*****, *****!&quot;</span>
+<span class="k">assert</span> <span class="n">censor_words</span><span class="p">(</span><span class="s2">&quot;Python is awesome&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="s2">&quot;awesome&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="s2">&quot;****** is *******&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestCensorWords:
+    def test_censor_words(self):
+        # Test case 1: Censoring &quot;Hello&quot; and &quot;World&quot; in &quot;Hello, World!&quot;
+        sentence = &quot;Hello, World!&quot;
+        words = [&quot;Hello&quot;, &quot;World&quot;]
+        expected_result = &quot;*****, *****!&quot;
+
+        # Act
+        result = censor_words(sentence, words)
+
+        # Assert
+        assert result == expected_result
+
+    def test_censor_words_partial_match(self):
+        # Test case 2: Censoring &quot;Python&quot; and &quot;awesome&quot; in &quot;Python is awesome&quot;
+        sentence = &quot;Python is awesome&quot;
+        words = [&quot;Python&quot;, &quot;awesome&quot;]
+        expected_result = &quot;****** is *******&quot;
+
+        # Act
+        result = censor_words(sentence, words)
+
+        # Assert
+        assert result == expected_result
+
+    def test_censor_words_no_censoring(self):
+        # Test case 3: No censoring required
+        sentence = &quot;Hello, World!&quot;
+        words = [&quot;Love&quot;, &quot;Python&quot;]
+        expected_result = &quot;Hello, World!&quot;
+
+        # Act
+        result = censor_words(sentence, words)
+
+        # Assert
+        assert result == expected_result
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Iterate over each word in the list and replace it with a censor string of asterisks in the sentence.</p>
+</details>
+</div></section>
+<section id="str-format-str-join">
+<h3>str.format str.join<a class="headerlink" href="#str-format-str-join" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">format_person_info</span><span class="p">(</span><span class="n">people_info</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Formats a list of person information into a sentence.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        people_info (list): A list of dictionaries containing person information. Each dictionary should have &#39;name&#39; and &#39;age&#39; keys.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: A formatted sentence with person information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Format each person&#39;s information using a list comprehension</span>
+    <span class="n">formatted_info</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Name: </span><span class="si">{}</span><span class="s2">, Age: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">____</span><span class="p">]</span>
+
+    <span class="c1"># Join the formatted information using a comma and space</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">formatted_info</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">____</span>
+
+
+<span class="n">people</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Jane Smith&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;David Johnson&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">expected_output</span> <span class="o">=</span> <span class="s2">&quot;Name: John Doe, Age: 30, Name: Jane Smith, Age: 25, Name: David Johnson, Age: 35&quot;</span>
+<span class="k">assert</span> <span class="n">format_person_info</span><span class="p">(</span><span class="n">people</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected_output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestFormatPersonInfo:
+    def test_format_person_info(self):
+        # Test case 1: Format person information
+        people_info = [
+            {&#39;name&#39;: &#39;John Doe&#39;, &#39;age&#39;: 30},
+            {&#39;name&#39;: &#39;Jane Smith&#39;, &#39;age&#39;: 25},
+            {&#39;name&#39;: &#39;David Johnson&#39;, &#39;age&#39;: 35}
+        ]
+        expected_result = &quot;Name: John Doe, Age: 30, Name: Jane Smith, Age: 25, Name: David Johnson, Age: 35&quot;
+
+        # Act
+        result = format_person_info(people_info)
+
+        # Assert
+        assert result == expected_result
+
+    def test_format_person_info_empty_list(self):
+        # Test case 2: Format person information with an empty list
+        people_info = []
+        expected_result = &quot;&quot;
+
+        # Act
+        result = format_person_info(people_info)
+
+        # Assert
+        assert result == expected_result
+
+    def test_format_person_info_single_person(self):
+        # Test case 3: Format person information with a single person
+        people_info = [{&#39;name&#39;: &#39;John Doe&#39;, &#39;age&#39;: 30}]
+        expected_result = &quot;Name: John Doe, Age: 30&quot;
+
+        # Act
+        result = format_person_info(people_info)
+
+        # Assert
+        assert result == expected_result
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Format each person’s information using a list comprehension, then join the formatted information using a comma and space.</p>
+</details>
+</div></section>
+<section id="str-split">
+<h3>str.split<a class="headerlink" href="#str-split" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="k">def</span> <span class="nf">count_word_occurrences</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Counts the occurrences of each word in a text.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        text (str): The input text.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary containing words as keys and their occurrences as values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">word_counts</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Split the text into words using split() method</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">____</span>
+
+    <span class="c1"># Count the occurrences of each word</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">____</span><span class="p">:</span>
+        <span class="c1"># Remove punctuation using translate() method and string.punctuation</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
+
+        <span class="c1"># Convert the word to lowercase</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">____</span>
+
+        <span class="c1"># Update the word count</span>
+        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_counts</span><span class="p">:</span>
+            <span class="n">word_counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="n">____</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">word_counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="n">____</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">word_counts</span>
+
+
+<span class="n">input_text</span> <span class="o">=</span> <span class="s2">&quot;This is a sample text. This text is just an example.&quot;</span>
+<span class="n">expected_output</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;this&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;is&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;sample&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;just&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;an&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;example&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+<span class="k">assert</span> <span class="n">count_word_occurrences</span><span class="p">(</span><span class="n">input_text</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected_output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestCountWordOccurrences:
+    def test_count_word_occurrences(self):
+        # Test case 1: Count word occurrences in input text
+        input_text = &quot;This is a sample text. This text is just an example.&quot;
+        expected_output = {
+            &quot;this&quot;: 2,
+            &quot;is&quot;: 2,
+            &quot;a&quot;: 1,
+            &quot;sample&quot;: 1,
+            &quot;text&quot;: 2,
+            &quot;just&quot;: 1,
+            &quot;an&quot;: 1,
+            &quot;example&quot;: 1
+        }
+
+        # Act
+        result = count_word_occurrences(input_text)
+
+        # Assert
+        assert result == expected_output
+
+    def test_count_word_occurrences_empty_text(self):
+        # Test case 2: Count word occurrences in an empty text
+        input_text = &quot;&quot;
+        expected_output = {}
+
+        # Act
+        result = count_word_occurrences(input_text)
+
+        # Assert
+        assert result == expected_output
+
+    def test_count_word_occurrences_same_word_repeated(self):
+        # Test case 3: Count word occurrences with the same word repeated
+        input_text = &quot;word word word word&quot;
+        expected_output = {&quot;word&quot;: 4}
+
+        # Act
+        result = count_word_occurrences(input_text)
+
+        # Assert
+        assert result == expected_output
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Split the text into words using the split() method, remove punctuation using translate() method and string.punctuation, convert words to lowercase using the lower() method, and update the word count in a dictionary.</p>
+</details>
+</div></section>
+</section>
+<section id="numbers">
+<h2>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h2>
+<section id="creating-formulas">
+<h3>Creating formulas<a class="headerlink" href="#creating-formulas" title="Link to this heading">#</a></h3>
+<p>Write the following mathematical formula in Python:</p>
+<p><span class="math notranslate nohighlight">\(result = 6a^3 - \frac{8b^2 }{4c} + 11\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the value of the formula: (6 * a^3) - (8 * b^2) / (4 * c) + 11.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        a (float or int): The value of &#39;a&#39;.</span>
+<span class="sd">        b (float or int): The value of &#39;b&#39;.</span>
+<span class="sd">        c (float or int): The value of &#39;c&#39;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: The result of the formula.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="n">a</span> <span class="n">____</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">b</span> <span class="n">____</span> <span class="mi">2</span><span class="p">)</span> <span class="n">____</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="mi">11</span>
+
+
+<span class="c1"># Testing calculate function</span>
+<span class="k">assert</span> <span class="n">calculate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mf">54.5</span><span class="p">,</span> <span class="s2">&quot;calculate test failed&quot;</span>
+<span class="k">assert</span> <span class="n">calculate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mf">14.0</span><span class="p">,</span> <span class="s2">&quot;calculate test failed&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestCalculate(unittest.TestCase):
+
+    def test_calculate_happy_case(self):
+        # assign
+        a = 2
+        b = 3
+        c = 4
+
+        # act
+        actual_result = calculate(a, b, c)
+
+        # assert
+        assert actual_result == 54.5, &quot;calculate test failed&quot;
+
+    def test_calculate_with_str_input(self):
+        # assign
+        a = &#39;2&#39;
+        b = 3
+        c = 4
+
+        # act &amp; assert
+        with pytest.raises(TypeError):
+            calculate(a, b, c)
+
+    def test_calculate_with_none_input(self):
+        # assign
+        a = 2
+        b = None
+        c = 4
+
+        # act &amp; assert
+        with pytest.raises(TypeError):
+            calculate(a, b, c)
+
+    def test_calculate_with_invalid_c_input(self):
+        # assign
+        a = 2
+        b = 3
+        c = 0
+
+        # act &amp; assert
+        with pytest.raises(ZeroDivisionError):
+            calculate(a, b, c)
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h2>
+<section id="list-append-list-remove-mutable">
+<h3>list.append, list.remove, mutable<a class="headerlink" href="#list-append-list-remove-mutable" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">permutations</span><span class="p">(</span><span class="n">elements</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate all permutations of a list of elements.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        elements (list): List of elements.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: List of permutations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">elements</span><span class="p">]</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)):</span>
+        <span class="n">remaining</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="n">____i</span><span class="p">]</span> <span class="o">+</span> <span class="n">elements</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">____</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">perm</span> <span class="ow">in</span> <span class="n">____</span><span class="p">(</span><span class="n">remaining</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">____</span><span class="p">([</span><span class="n">elements</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">perm</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">assert</span> <span class="n">permutations</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="k">assert</span> <span class="n">permutations</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestPermutations:
+    def test_permutations(self):
+        # Test case 1: Permutations of [1, 2, 3]
+        elements = [1, 2, 3]
+        expected_output = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+
+        # Act
+        result = permutations(elements)
+
+        # Assert
+        assert result == expected_output
+
+    def test_permutations_single_element(self):
+        # Test case 2: Permutations of a single element
+        elements = [&#39;a&#39;]
+        expected_output = [[&#39;a&#39;]]
+
+        # Act
+        result = permutations(elements)
+
+        # Assert
+        assert result == expected_output
+
+    def test_permutations_empty_list(self):
+        # Test case 3: Permutations of an empty list
+        elements = []
+        expected_output = [[]]
+
+        # Act
+        result = permutations(elements)
+
+        # Assert
+        assert result == expected_output
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Generate all permutations of a list of elements by recursively swapping elements and generating permutations of the remaining list.</p>
+</details>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_duplicates</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove duplicates from a list using the `list.remove()` method.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lst (list): The list to remove duplicates from.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: The list with duplicates removed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">unique_list</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="n">____</span><span class="p">]</span>  <span class="c1"># Create a copy of the original list</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">unique_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="n">____</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">unique_list</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">unique_list</span>
+
+
+<span class="k">assert</span> <span class="n">remove_duplicates</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">remove_duplicates</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestRemoveDuplicates:
+    def test_remove_duplicates(self):
+        # Test case 1: Remove duplicates from [1, 2, 2, 3, 4, 4, 5]
+        lst = [1, 2, 2, 3, 4, 4, 5]
+        expected_output = [1, 2, 3, 4, 5]
+
+        # Act
+        result = remove_duplicates(lst)
+
+        # Assert
+        assert result == expected_output
+
+    def test_remove_duplicates_no_duplicates(self):
+        # Test case 2: Remove duplicates from a list with no duplicates
+        lst = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+        expected_output = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+
+        # Act
+        result = remove_duplicates(lst)
+
+        # Assert
+        assert result == expected_output
+
+    def test_remove_duplicates_empty_list(self):
+        # Test case 3: Remove duplicates from an empty list
+        lst = []
+        expected_output = []
+
+        # Act
+        result = remove_duplicates(lst)
+
+        # Assert
+        assert result == expected_output
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Create a copy of the original list, iterate over the list items, and remove any duplicate occurrences using the list.remove() method. Return the resulting unique list.</p>
+</details>
+</div></section>
+<section id="slice">
+<h3>Slice<a class="headerlink" href="#slice" title="Link to this heading">#</a></h3>
+<p>Create a new list without modifiying the original one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">original</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;learning&#39;</span><span class="p">,</span> <span class="s1">&#39;hacking&#39;</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your implementation here</span>
+<span class="n">modified</span> <span class="o">=</span> <span class="n">____</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">original</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;learning&#39;</span><span class="p">,</span> <span class="s1">&#39;hacking&#39;</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">modified</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;am&#39;</span><span class="p">,</span> <span class="s1">&#39;learning&#39;</span><span class="p">,</span> <span class="s1">&#39;lists&#39;</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list-extend">
+<h3>list.extend<a class="headerlink" href="#list-extend" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flatten_nested_lists</span><span class="p">(</span><span class="n">nested_lists</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Flatten a list of nested lists into a single list using the `list.extend()` method.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        nested_lists (list): The list of nested lists.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: The flattened list.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">flattened_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">____</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">nested_lists</span><span class="p">:</span>
+        <span class="n">flattened_list</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">____</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">flattened_list</span>
+
+
+<span class="k">assert</span> <span class="n">flatten_nested_lists</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">flatten_nested_lists</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">]])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestFlattenNestedLists:
+    def test_flatten_nested_lists(self):
+        # Test case 1: Flatten [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+        nested_lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+        expected_output = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        # Act
+        result = flatten_nested_lists(nested_lists)
+
+        # Assert
+        assert result == expected_output
+
+    def test_flatten_nested_lists_empty_lists(self):
+        # Test case 2: Flatten [[]]
+        nested_lists = [[]]
+        expected_output = []
+
+        # Act
+        result = flatten_nested_lists(nested_lists)
+
+        # Assert
+        assert result == expected_output
+
+    def test_flatten_nested_lists_no_nested_lists(self):
+        # Test case 3: Flatten [1, 2, 3, 4, 5]
+        nested_lists = [1, 2, 3, 4, 5]
+        expected_output = [1, 2, 3, 4, 5]
+
+        # Act
+        result = flatten_nested_lists([nested_lists])
+
+        # Assert
+        assert result == expected_output
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Initialize an empty list called flattened_list. Iterate over each sublist in the nested_lists using a loop. Extend flattened_list with each sublist using the list.extend() method. Finally, return flattened_list.</p>
+</details>
+</div></section>
+</section>
+<section id="dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h2>
+<section id="populating-a-dictionary">
+<h3>Populating a dictionary<a class="headerlink" href="#populating-a-dictionary" title="Link to this heading">#</a></h3>
+<p>Create a dictionary by using all the given variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s1">&#39;Doe&#39;</span>
+<span class="n">favorite_hobby</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
+<span class="n">sports_hobby</span> <span class="o">=</span> <span class="s1">&#39;gym&#39;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">82</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your implementation</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="n">____</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">my_dict</span> <span class="o">==</span> <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">82</span><span class="p">,</span>
+        <span class="s1">&#39;hobbies&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;gym&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Populating a Dictionary with Element Occurrences</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_occurrences</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Count the occurrences of elements in a list and store the counts in a dictionary.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lst (list): The input list.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary with elements as keys and their occurrences as values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">occurrences</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">____</span><span class="p">:</span>
+            <span class="n">occurrences</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="n">____</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">occurrences</span><span class="p">[</span><span class="n">____</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">occurrences</span>
+
+
+<span class="k">assert</span> <span class="n">count_occurrences</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="k">assert</span> <span class="n">count_occurrences</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestCountOccurrences:
+    def test_count_occurrences(self):
+        # Test case 1: Count occurrences in [1, 2, 2, 3, 3, 3]
+        lst = [1, 2, 2, 3, 3, 3]
+        expected_output = {1: 1, 2: 2, 3: 3}
+
+        # Act
+        result = count_occurrences(lst)
+
+        # Assert
+        assert result == expected_output
+
+    def test_count_occurrences_empty_list(self):
+        # Test case 2: Count occurrences in an empty list []
+        lst = []
+        expected_output = {}
+
+        # Act
+        result = count_occurrences(lst)
+
+        # Assert
+        assert result == expected_output
+
+    def test_count_occurrences_strings(self):
+        # Test case 3: Count occurrences in [&#39;a&#39;, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;c&#39;]
+        lst = [&#39;a&#39;, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;c&#39;]
+        expected_output = {&#39;a&#39;: 2, &#39;b&#39;: 1, &#39;c&#39;: 2}
+
+        # Act
+        result = count_occurrences(lst)
+
+        # Assert
+        assert result == expected_output
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Iterate over the list, check if each item is already a key, and update its occurrence count.</p>
+</details>
+</div></section>
+<section id="removing-duplicate-values-from-a-dictionary-using-del">
+<h3>Removing Duplicate Values from a Dictionary using ‘del’<a class="headerlink" href="#removing-duplicate-values-from-a-dictionary-using-del" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_duplicates</span><span class="p">(</span><span class="n">dictionary</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Remove duplicate values from a dictionary by using the `del` keyword.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dictionary (dict): The input dictionary.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: The dictionary with duplicate values removed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">unique_values</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">duplicate_keys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">____</span> <span class="ow">in</span> <span class="n">unique_values</span><span class="p">:</span>
+            <span class="n">duplicate_keys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">____</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">unique_values</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">____</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">duplicate_keys</span><span class="p">:</span>
+        <span class="n">____</span> <span class="n">dictionary</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">dictionary</span>
+
+
+<span class="k">assert</span> <span class="n">remove_duplicates</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="k">assert</span> <span class="n">remove_duplicates</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">})</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;def&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestRemoveDuplicates:
+    def test_remove_duplicates(self):
+        # Test case 1: Remove duplicates from {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 1, &#39;d&#39;: 3}
+        dictionary = {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 1, &#39;d&#39;: 3}
+        expected_output = {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;d&#39;: 3}
+
+        # Act
+        result = remove_duplicates(dictionary)
+
+        # Assert
+        assert result == expected_output
+
+    def test_remove_duplicates_empty_dict(self):
+        # Test case 2: Remove duplicates from an empty dictionary {}
+        dictionary = {}
+        expected_output = {}
+
+        # Act
+        result = remove_duplicates(dictionary)
+
+        # Assert
+        assert result == expected_output
+
+    def test_remove_duplicates_strings(self):
+        # Test case 3: Remove duplicates from {&#39;x&#39;: &#39;abc&#39;, &#39;y&#39;: &#39;def&#39;, &#39;z&#39;: &#39;abc&#39;}
+        dictionary = {&#39;x&#39;: &#39;abc&#39;, &#39;y&#39;: &#39;def&#39;, &#39;z&#39;: &#39;abc&#39;}
+        expected_output = {&#39;x&#39;: &#39;abc&#39;, &#39;y&#39;: &#39;def&#39;}
+
+        # Act
+        result = remove_duplicates(dictionary)
+
+        # Assert
+        assert result == expected_output
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Use a set to track unique values, iterate over the dictionary items, and remove duplicate keys using the del keyword.</p>
+</details>
+</div></section>
+<section id="counting-occurrences-of-elements-using-dict-get">
+<h3>Counting Occurrences of Elements using dict.get()<a class="headerlink" href="#counting-occurrences-of-elements-using-dict-get" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_occurrences</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Count the occurrences of elements in a list and store the counts in a dictionary using `dict.get()`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lst (list): The input list.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary with elements as keys and their occurrences as values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">occurrences</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="n">occurrences</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">occurrences</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="n">____</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">occurrences</span>
+
+
+<span class="k">assert</span> <span class="n">count_occurrences</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="k">assert</span> <span class="n">count_occurrences</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestCountOccurrences:
+    def test_count_occurrences(self):
+        # Test case 1: Count occurrences in [1, 2, 2, 3, 3, 3]
+        lst = [1, 2, 2, 3, 3, 3]
+        expected_output = {1: 1, 2: 2, 3: 3}
+
+        # Act
+        result = count_occurrences(lst)
+
+        # Assert
+        assert result == expected_output
+
+    def test_count_occurrences_empty_list(self):
+        # Test case 2: Count occurrences in an empty list []
+        lst = []
+        expected_output = {}
+
+        # Act
+        result = count_occurrences(lst)
+
+        # Assert
+        assert result == expected_output
+
+    def test_count_occurrences_strings(self):
+        # Test case 3: Count occurrences in [&#39;a&#39;, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;c&#39;]
+        lst = [&#39;a&#39;, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;c&#39;]
+        expected_output = {&#39;a&#39;: 2, &#39;b&#39;: 1, &#39;c&#39;: 2}
+
+        # Act
+        result = count_occurrences(lst)
+
+        # Assert
+        assert result == expected_output
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Use the dict.get() method to retrieve the current count of an element from the dictionary and increment it by 1. Initialize the count as 0 if the element is not yet in the dictionary.</p>
+</details>
+</div></section>
+<section id="grouping-items-by-category-using-dict-setdefault">
+<h3>Grouping Items by Category using dict.setdefault()<a class="headerlink" href="#grouping-items-by-category-using-dict-setdefault" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">group_by_category</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Group items by category using `dict.setdefault()`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        items (list): The input list of items.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: A dictionary with categories as keys and lists of items as values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="n">category</span> <span class="o">=</span> <span class="n">____</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+        <span class="n">categories</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">category</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">categories</span>
+
+
+<span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 1&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category A&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 2&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category B&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 3&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category A&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 4&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category B&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 5&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category A&#39;</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">group_by_category</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+<span class="n">expected_result</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Category A&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 1&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category A&#39;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 3&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category A&#39;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 5&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category A&#39;</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;Category B&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 2&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category B&#39;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Item 4&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;Category B&#39;</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">expected_result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestGroupByCategory:
+    def test_group_by_category(self):
+        # Test case 1: Group items by category
+        items = [
+            {&#39;name&#39;: &#39;Item 1&#39;, &#39;category&#39;: &#39;Category A&#39;},
+            {&#39;name&#39;: &#39;Item 2&#39;, &#39;category&#39;: &#39;Category B&#39;},
+            {&#39;name&#39;: &#39;Item 3&#39;, &#39;category&#39;: &#39;Category A&#39;},
+            {&#39;name&#39;: &#39;Item 4&#39;, &#39;category&#39;: &#39;Category B&#39;},
+            {&#39;name&#39;: &#39;Item 5&#39;, &#39;category&#39;: &#39;Category A&#39;},
+        ]
+        expected_output = {
+            &#39;Category A&#39;: [
+                {&#39;name&#39;: &#39;Item 1&#39;, &#39;category&#39;: &#39;Category A&#39;},
+                {&#39;name&#39;: &#39;Item 3&#39;, &#39;category&#39;: &#39;Category A&#39;},
+                {&#39;name&#39;: &#39;Item 5&#39;, &#39;category&#39;: &#39;Category A&#39;}
+            ],
+            &#39;Category B&#39;: [
+                {&#39;name&#39;: &#39;Item 2&#39;, &#39;category&#39;: &#39;Category B&#39;},
+                {&#39;name&#39;: &#39;Item 4&#39;, &#39;category&#39;: &#39;Category B&#39;}
+            ]
+        }
+
+        # Act
+        result = group_by_category(items)
+
+        # Assert
+        assert result == expected_output
+
+    def test_group_by_category_empty_input(self):
+        # Test case 2: Empty input list
+        items = []
+        expected_output = {}
+
+        # Act
+        result = group_by_category(items)
+
+        # Assert
+        assert result == expected_output
+
+    def test_group_by_category_single_category(self):
+        # Test case 3: Only one category present
+        items = [
+            {&#39;name&#39;: &#39;Item 1&#39;, &#39;category&#39;: &#39;Category A&#39;},
+            {&#39;name&#39;: &#39;Item 2&#39;, &#39;category&#39;: &#39;Category A&#39;},
+            {&#39;name&#39;: &#39;Item 3&#39;, &#39;category&#39;: &#39;Category A&#39;}
+        ]
+        expected_output = {
+            &#39;Category A&#39;: [
+                {&#39;name&#39;: &#39;Item 1&#39;, &#39;category&#39;: &#39;Category A&#39;},
+                {&#39;name&#39;: &#39;Item 2&#39;, &#39;category&#39;: &#39;Category A&#39;},
+                {&#39;name&#39;: &#39;Item 3&#39;, &#39;category&#39;: &#39;Category A&#39;}
+            ]
+        }
+
+        # Act
+        result = group_by_category(items)
+
+        # Assert
+        assert result == expected_output
+
+    def test_group_by_category_no_category(self):
+        # Test case 4: No category present in items
+        items = [
+            {&#39;name&#39;: &#39;Item 1&#39;},
+            {&#39;name&#39;: &#39;Item 2&#39;},
+            {&#39;name&#39;: &#39;Item 3&#39;}
+        ]
+        expected_output = {
+            None: [
+                {&#39;name&#39;: &#39;Item 1&#39;},
+                {&#39;name&#39;: &#39;Item 2&#39;},
+                {&#39;name&#39;: &#39;Item 3&#39;}
+            ]
+        }
+
+        # Act
+        result = group_by_category(items)
+
+        # Assert
+        assert result == expected_output
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Use the dict.setdefault() method to retrieve the list of items for a category. If the category doesn’t exist in the dictionary, it will be added with an empty list as the default value. Append the current item to the list of items for the corresponding category.</p>
+</details>
+</div></section>
+<section id="accessing-and-merging-dictionaries-into-a-single-dictionary">
+<h3>Accessing and Merging Dictionaries into a Single Dictionary<a class="headerlink" href="#accessing-and-merging-dictionaries-into-a-single-dictionary" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">merge_dicts</span><span class="p">(</span><span class="o">*</span><span class="n">dicts</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Merge multiple dictionaries into a single dictionary.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        *dicts: Multiple dictionaries to merge.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: The merged dictionary.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">merged_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">dictionary</span> <span class="ow">in</span> <span class="n">dicts</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">____</span> <span class="ow">in</span> <span class="n">____</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">merged_dict</span><span class="p">[</span><span class="n">____</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="n">merged_dict</span><span class="p">[</span><span class="n">____</span><span class="p">]</span> <span class="o">=</span> <span class="n">merge_dicts</span><span class="p">(</span><span class="n">merged_dict</span><span class="p">[</span><span class="n">____</span><span class="p">],</span> <span class="n">value</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">merged_dict</span><span class="p">[</span><span class="n">____</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="n">merged_dict</span><span class="p">[</span><span class="n">____</span><span class="p">]</span><span class="o">.</span><span class="n">____</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">merged_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">____</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">merged_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">____</span>
+    <span class="k">return</span> <span class="n">merged_dict</span>
+
+
+<span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">dict3</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">merge_dicts</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="n">dict2</span><span class="p">,</span> <span class="n">dict3</span><span class="p">)</span>
+<span class="n">expected_result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">expected_result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<h5><font color=blue>Check result by executing below... 📝</font></h5>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ipytest</span> -qq
+
+class TestMergeDicts:
+
+    def test_merge_two_dicts(self):
+        # Test case 1: Merge two dictionaries
+        dict1 = {&#39;a&#39;: 1, &#39;b&#39;: 2}
+        dict2 = {&#39;b&#39;: 3, &#39;c&#39;: 4}
+        expected_output = {&#39;a&#39;: 1, &#39;b&#39;: 3, &#39;c&#39;: 4}
+
+        result = merge_dicts(dict1, dict2)
+
+        assert result == expected_output
+
+    def test_merge_three_dicts(self):
+        # Test case 2: Merge three dictionaries
+        dict1 = {&#39;a&#39;: 1, &#39;b&#39;: 2}
+        dict2 = {&#39;b&#39;: 3, &#39;c&#39;: 4}
+        dict3 = {&#39;c&#39;: 5, &#39;d&#39;: 6}
+        expected_output = {&#39;a&#39;: 1, &#39;b&#39;: 3, &#39;c&#39;: 5, &#39;d&#39;: 6}
+
+        result = merge_dicts(dict1, dict2, dict3)
+
+        assert result == expected_output
+
+    def test_merge_nested_dicts(self):
+        # Test case 3: Merge dictionaries with nested dictionaries
+        dict1 = {&#39;a&#39;: 1, &#39;b&#39;: 2}
+        dict2 = {&#39;b&#39;: 3, &#39;c&#39;: 4}
+        dict4 = {&#39;e&#39;: {&#39;f&#39;: 7}}
+        dict5 = {&#39;e&#39;: {&#39;g&#39;: 8}}
+        expected_output = {&#39;a&#39;: 1, &#39;b&#39;: 3, &#39;c&#39;: 4, &#39;e&#39;: {&#39;f&#39;: 7, &#39;g&#39;: 8}}
+
+        result = merge_dicts(dict1, dict2, dict4, dict5)
+
+        assert result == expected_output
+
+    def test_merge_dicts_with_lists(self):
+        # Test case 4: Merge dictionaries with lists
+        dict1 = {&#39;a&#39;: 1, &#39;b&#39;: 2}
+        dict2 = {&#39;b&#39;: 3, &#39;c&#39;: 4}
+        dict6 = {&#39;h&#39;: [9, 10]}
+        dict7 = {&#39;h&#39;: [11, 12]}
+        expected_output = {&#39;a&#39;: 1, &#39;b&#39;: 3, &#39;c&#39;: 4, &#39;h&#39;: [9, 10, 11, 12]}
+
+        result = merge_dicts(dict1, dict2, dict6, dict7)
+
+        assert result == expected_output
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="alert alert-info">
+<details><summary>👩‍💻 <b>Hint</b></summary>
+<p>Use nested loops to iterate over the dictionaries and their key-value pairs. Check if the key already exists in the merged dictionary using the in operator. Handle the conflict based on the types of values using isinstance().</p>
+</details>
+</div></section>
+</section>
+<section id="acknowledgments">
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
+<p>Thanks to below awesome open source projects for Python learning, which inspire this chapter.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/trekhleb/learn-python">learn-python</a> and <a class="reference external" href="https://github.com/trekhleb">Oleksii Trekhleb</a></p></li>
+<li><p><a class="reference external" href="https://github.com/huangsam/ultimate-python">ultimate-python</a> and <a class="reference external" href="https://github.com/huangsam">Samuel Huang</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jerry-git/learn-python3">learn-python3</a> and <a class="reference external" href="https://github.com/jerry-gitq">Jerry Pussine</a></p></li>
+<li><p><a class="reference external" href="https://openai.com/product/chatgpt">chatgpt</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Python-programming-introduction-assignment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python programming introduction assignment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Python-programming-advanced-assignment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python programming advanced assignment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-generate-the-fibonacci-sequence-up-to-a-specified-number-of-terms">Implement a function to generate the Fibonacci sequence up to a specified number of terms.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-for-insertion-sort-to-sort-a-list-in-ascending-order">Implement a function for insertion sort to sort a list in ascending order.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-a-function-to-calculate-the-square-root-of-a-number-using-the-babylonian-method">Implement a function to calculate the square root of a number using the Babylonian method.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string">String</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-upper">str.upper</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-title">str.title</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-replace">str.replace</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-format-str-join">str.format str.join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-split">str.split</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers">Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-formulas">Creating formulas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-append-list-remove-mutable">list.append, list.remove, mutable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slice">Slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-extend">list.extend</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-a-dictionary">Populating a dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicate-values-from-a-dictionary-using-del">Removing Duplicate Values from a Dictionary using ‘del’</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-occurrences-of-elements-using-dict-get">Counting Occurrences of Elements using dict.get()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-items-by-category-using-dict-setdefault">Grouping Items by Category using dict.setdefault()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-merging-dictionaries-into-a-single-dictionary">Accessing and Merging Dictionaries into a Single Dictionary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marine
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
